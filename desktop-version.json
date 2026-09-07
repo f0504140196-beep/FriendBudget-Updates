@@ -1,0 +1,7 @@
+{
+  "app": "FriendBudget",
+  "channel": "stable",
+  "baseVersion": "1.6.0",
+  "latestVersion": "1.6.0",
+  "patches": []
+}

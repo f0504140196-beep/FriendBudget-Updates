@@ -2,6 +2,25 @@
   "app": "FriendBudget",
   "channel": "stable",
   "baseVersion": "1.6.1",
-  "latestVersion": "1.6.1",
-  "patches": []
+  "latestVersion": "1.6.2",
+  "patches": [
+    {
+      "from": "1.6.1",
+      "to": "1.6.2",
+      "files": [
+        {
+          "target": "index.html",
+          "beforeSha256": "565c2cfc771547d0307145f69c259ebbd138dd14120622020b4b33ab31ea39e4",
+          "afterSha256": "fe6c1e2efe91c3148d1c656efc2e56ee8dfa8ef2034a567b57394811af23cead",
+          "operations": [
+            {
+              "find": "content=\"1.6.1\"",
+              "replace": "content=\"1.6.2\"",
+              "expectedCount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

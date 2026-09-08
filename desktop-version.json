@@ -2,7 +2,7 @@
   "app": "FriendBudget",
   "channel": "stable",
   "baseVersion": "1.6.1",
-  "latestVersion": "1.6.2",
+  "latestVersion": "1.6.3",
   "patches": [
     {
       "from": "1.6.1",
@@ -17,6 +17,24 @@
               "find": "content=\"1.6.1\"",
               "replace": "content=\"1.6.2\"",
               "expectedCount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": "1.6.2",
+      "to": "1.6.3",
+      "files": [
+        {
+          "target": "index.html",
+          "beforeSha256": "fe6c1e2efe91c3148d1c656efc2e56ee8dfa8ef2034a567b57394811af23cead",
+          "afterSha256": "7574a1565a4b5bb6e1eac177cc9a6e4d6be3037c7b5261c8c8c7d1fe923485bb",
+          "operations": [
+            {
+              "find": "</head>",
+              "replace": "\n    <style id=\"fb-clickable-hover-fix\">\n      button:not(:disabled), [role=\"button\"]:not([aria-disabled=\"true\"]), a[href], label[for], select { cursor: pointer; }\n      button:not(:disabled), [role=\"button\"]:not([aria-disabled=\"true\"]) { transition: filter .15s ease, transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }\n      @media (hover: hover) {\n        button:not(:disabled):hover, [role=\"button\"]:not([aria-disabled=\"true\"]):hover { filter: brightness(.97); box-shadow: 0 2px 8px rgba(15,23,42,.10); }\n      }\n      button:disabled, [aria-disabled=\"true\"] { cursor: not-allowed; }\n    </style>\n</head>",
+              "expectedCount": 1
             }
           ]
         }

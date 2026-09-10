@@ -2,7 +2,7 @@
   "app": "FriendBudget",
   "channel": "stable",
   "baseVersion": "1.6.1",
-  "latestVersion": "1.6.3",
+  "latestVersion": "1.6.4",
   "patches": [
     {
       "from": "1.6.1",
@@ -34,6 +34,24 @@
             {
               "find": "</head>",
               "replace": "\n    <style id=\"fb-clickable-hover-fix\">\n      button:not(:disabled), [role=\"button\"]:not([aria-disabled=\"true\"]), a[href], label[for], select { cursor: pointer; }\n      button:not(:disabled), [role=\"button\"]:not([aria-disabled=\"true\"]) { transition: filter .15s ease, transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease; }\n      @media (hover: hover) {\n        button:not(:disabled):hover, [role=\"button\"]:not([aria-disabled=\"true\"]):hover { filter: brightness(.97); box-shadow: 0 2px 8px rgba(15,23,42,.10); }\n      }\n      button:disabled, [aria-disabled=\"true\"] { cursor: not-allowed; }\n    </style>\n</head>",
+              "expectedCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": "1.6.3",
+      "to": "1.6.4",
+      "files": [
+        {
+          "target": "index.html",
+          "beforeSha256": "7574a1565a4b5bb6e1eac177cc9a6e4d6be3037c7b5261c8c8c7d1fe923485bb",
+          "afterSha256": "a27806f26adcde5feda03ea42990fed2d3e10aba7321363e8d38b7d4eaa05fc3",
+          "operations": [
+            {
+              "find": "if (status) status.innerHTML = `<span class=\"${failed?'text-amber-700':'text-emerald-700'} font-bold\">✓ עודכן: ${ok} קבצים | ${added} תנועות חדשות${dup?` | ${dup} כפילויות הוסרו`:''}${failed?` | ${failed} נכשלו`:''}</span>`;",
+              "replace": "if (status) status.innerHTML = `<div class=\"mt-4 rounded-2xl border-2 ${failed ? 'border-amber-300 bg-amber-50 text-amber-900' : 'border-emerald-300 bg-emerald-50 text-emerald-900'} px-5 py-4 text-base font-bold shadow-sm\" role=\"status\" aria-live=\"polite\"><div class=\"text-lg mb-1\">${failed ? '⚠️ הטעינה הושלמה עם שגיאות' : '✅ הטעינה הושלמה בהצלחה!'}</div><div class=\"text-sm font-semibold\">${ok} קבצים נטענו | ${added} תנועות חדשות${dup?` | ${dup} כפילויות הוסרו`:''}${failed?` | ${failed} נכשלו`:''}</div></div>`;",
               "expectedCount": 1
             }
           ]
